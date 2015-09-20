@@ -1,0 +1,114 @@
+$lightC: #A3A4FF;
+$mediumC: #7A7BBF;
+$darkishC: #51527F;
+$darkC: #292940;
+$fontDisplay: 'Roboto', sans-serif;
+
+@mixin centerEl {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+body {
+  min-height: 40em
+}
+
+#app {
+  @include centerEl;
+  width: 40em;
+  height: 30em;
+  margin-top: 3em;
+}
+
+#about {
+  height: 50%;
+  background-color: $lightC;
+  h3,h4,h1 {
+    font-family: $fontDisplay;
+    color: $darkC;
+  }
+  
+  h1 {
+    font-weight: 700;
+    font-size: 3.5em;
+    margin-top: .5em;
+  }
+  
+  h4 {
+    margin-top: -.3em;
+    font-size: 1.3em;
+  }
+  
+  h3 {
+    font-size: 1.2em;
+    margin-top: 1em;
+  }
+}
+
+#currentW {
+  height: 50%;
+  background-color: $darkC;
+  color: white;
+    button {
+    padding: 0;
+    height: 1.5em;
+    width: 1.5em;
+    margin: .5em;
+    }
+  #weather {
+    font-family: $fontDisplay;
+    color: $lightC;
+  }
+  
+}
+
+#currentTemp, #maxTemp {
+  font-family: $fontDisplay;
+  color: $lightC;
+  font-size: 2em;
+}
+
+#futureW {
+  background-color: $mediumC;
+  height: 50%;
+    h3 {
+      font-size: 1.2em;
+      font-family: $fontDisplay;
+    }
+  .weatherDisplay {
+     font-family: $fontDisplay;
+  }
+}
+
+#tomorrow {
+  height: 15em;
+}
+
+#secondDay {
+ background-color: $darkishC;
+  height: 15em;
+ 
+}
+
+#thirdDay {
+  background-color: $lightC;
+  height: 15em;
+}
+
+
+
+
+.tempDisplay {
+  display: inline;
+  font-family: $fontDisplay;
+  color: $lightC;
+}
+
+.tempDisplay2 {
+  font-family: $fontDisplay;
+  color: $darkC;
+}
