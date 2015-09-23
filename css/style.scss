@@ -34,7 +34,7 @@ body {
   
   h1 {
     font-weight: 700;
-    font-size: 3.5em;
+    font-size: 2.7em;
     margin-top: .5em;
   }
   
@@ -111,4 +111,34 @@ body {
 .tempDisplay2 {
   font-family: $fontDisplay;
   color: $darkC;
+}
+
+
+
+
+@media screen and (max-width: 665px) {
+ #app {
+  width: 30em;
+}
+ #about h1 {
+     font-size: 2em;
+ }
+    
+}
+
+
+@media screen and (max-width: 505px) {
+ #app {
+  width: 20em;
+  margin-top: 1.5em;     
+}
+ about h1 {
+  font-size: 1.7em;
+ }
+    
+#currentTemp, #maxTemp {
+  font-size: 1.4em;
+}      
+    
+    
 }
