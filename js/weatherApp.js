@@ -30,15 +30,16 @@ $(document).ready(function() {
   }, 1000);
 
   getInfo = function() {
-    $.get("http://ipinfo.io", function(result) {
+    $.get("http://ip-api.com/json", function(result) {
       myScope.city = result.city;
       myScope.region = result.region;
-      myScope.country = result.country.toLowerCase();
+      myScope.countryCode = result.countryCode.toLowerCase();
       $('#location').html(myScope.city);
-      myUrl.apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + myScope.city + "," + myScope.country;
+      myUrl.apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + myScope.city + "," + myScope.countryCode;
       console.log(myUrl);
       getWeather();
       getForecast();
+      console.log(myUrl, myScope)
     }, "jsonp");
 
   };
@@ -67,7 +68,7 @@ $(document).ready(function() {
   };
 
   getForecast = function() {
-    var forecastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + myScope.city + "," + myScope.country;
+    var forecastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + myScope.city + "," + myScope.countryCode;
     console.log(forecastUrl);
     $.get(forecastUrl, function(data) {
 
