@@ -35,7 +35,7 @@ $(document).ready(function() {
       myScope.region = result.region;
       myScope.countryCode = result.countryCode.toLowerCase();
       $('#location').html(myScope.city);
-      myUrl.apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + myScope.city + "," + myScope.countryCode;
+      myUrl.apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + myScope.city + "," + myScope.countryCode + "&APPID=a5bb3d3396a371e54916503720fca1a3";
       console.log(myUrl);
       getWeather();
       getForecast();
@@ -68,7 +68,7 @@ $(document).ready(function() {
   };
 
   getForecast = function() {
-    var forecastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + myScope.city + "," + myScope.countryCode;
+    var forecastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + myScope.city + "," + myScope.countryCode + "&APPID=a5bb3d3396a371e54916503720fca1a3";
     console.log(forecastUrl);
     $.get(forecastUrl, function(data) {
 
