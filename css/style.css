@@ -79,16 +79,14 @@ body {
 @media screen and (max-width: 665px) {
   #app {
     width: 30em; }
-
   #about h1 {
     font-size: 2em; } }
+
 @media screen and (max-width: 505px) {
   #app {
     width: 20em;
     margin-top: 1.5em; }
-
   about h1 {
     font-size: 1.7em; }
-
   #currentTemp, #maxTemp {
     font-size: 1.4em; } }

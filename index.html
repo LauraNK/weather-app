@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css"/>
-<link href="css/foundation.css" rel="stylesheet">
-  
-<link href="css/style.css" rel="stylesheet">
-<script src=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css" />
+  <link href="css/foundation.css" rel="stylesheet">
+
+  <link href="css/style.css" rel="stylesheet">
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js></script>
 </head>
+
 <body>
   <div id="wrapper">
     <div id="app" class="row">
@@ -17,15 +19,19 @@
       </div>
       <div id="currentW" class="small-5 columns">
         <button id="fahr">&degF</button>
-        <button id="cel">&degC </button>
-        <div id="icon"> </div>
+        <button id="cel">&degC</button>
+        <div id="icon"></div>
         <div id="weather"></div>
         <div class="row">
           <div class="small-6 columns">
-            <div class="tempDisplay">Current temp.:<br> <span id="currentTemp"></span></div>
+            <div class="tempDisplay">Current temp.:
+              <br> <span id="currentTemp"></span>
+            </div>
           </div>
-          <div class="small-6 columns">     
-            <div class="tempDisplay">Max temp.:<br><span id="maxTemp"> </span></div>
+          <div class="small-6 columns">
+            <div class="tempDisplay">Max temp.:
+              <br><span id="maxTemp"> </span>
+            </div>
           </div>
         </div>
       </div>
@@ -35,30 +41,45 @@
             <h3></h3>
             <div class="icon"></div>
             <div class="weatherDisplay"></div>
-            <div class="tempDisplay2">Min temp.:<br><span class="min1"></span></div>
-            <div class="tempDisplay2">Max temp.:<br><span class="max1"></span></div>
+            <div class="tempDisplay2">Min temp.:
+              <br><span class="min1"></span>
+            </div>
+            <div class="tempDisplay2">Max temp.:
+              <br><span class="max1"></span>
+            </div>
           </div>
           <div id="secondDay" class="small-4 columns">
             <h3></h3>
             <div class="icon"></div>
             <div class="weatherDisplay"></div>
-            <div class="tempDisplay2">Min temp.:<br><span class="min2"></span></div>
-            <div class="tempDisplay2">Max temp.:<br><span class="max2"></span></div>
+            <div class="tempDisplay2">Min temp.:
+              <br><span class="min2"></span>
+            </div>
+            <div class="tempDisplay2">Max temp.:
+              <br><span class="max2"></span>
+            </div>
           </div>
           <div id="thirdDay" class="small-4 columns">
             <h3></h3>
             <div class="icon"></div>
             <div class="weatherDisplay"></div>
-            <div class="tempDisplay2">Min temp.:<br><span class="min3"></span></div>
-            <div class="tempDisplay2">Max temp.:<br><span class="max3"></span></div>
+            <div class="tempDisplay2">Min temp.:
+              <br><span class="min3"></span>
+            </div>
+            <div class="tempDisplay2">Max temp.:
+              <br><span class="max3"></span>
+            </div>
           </div>
         </div>
       </div>
+
+
     </div>
   </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
-<script src="js/weatherApp.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+  <script src="js/weatherApp.js"></script>
 
 </body>
+
 </html>
-    
