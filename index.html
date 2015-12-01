@@ -9,73 +9,41 @@
   <script src=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js></script>
 </head>
 
-<body>
-  <div id="wrapper">
-    <div id="app" class="row">
-      <div id="about" class="small-7 columns">
-        <h3 id="time"> </h3>
-        <h4 id="date"> </h4>
-        <h1 id="location"></h1>
-      </div>
-      <div id="currentW" class="small-5 columns">
-        <button id="fahr">&degF</button>
-        <button id="cel">&degC</button>
-        <div id="icon"></div>
-        <div id="weather"></div>
-        <div class="row">
-          <div class="small-6 columns">
-            <div class="tempDisplay">Current temp.:
-              <br> <span id="currentTemp"></span>
-            </div>
-          </div>
-          <div class="small-6 columns">
-            <div class="tempDisplay">Max temp.:
-              <br><span id="maxTemp"> </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="futureW" class="small-12 columns">
-        <div class="row">
-          <div id="tomorrow" class="small-4 columns">
-            <h3></h3>
-            <div class="icon"></div>
-            <div class="weatherDisplay"></div>
-            <div class="tempDisplay2">Min temp.:
-              <br><span class="min1"></span>
-            </div>
-            <div class="tempDisplay2">Max temp.:
-              <br><span class="max1"></span>
-            </div>
-          </div>
-          <div id="secondDay" class="small-4 columns">
-            <h3></h3>
-            <div class="icon"></div>
-            <div class="weatherDisplay"></div>
-            <div class="tempDisplay2">Min temp.:
-              <br><span class="min2"></span>
-            </div>
-            <div class="tempDisplay2">Max temp.:
-              <br><span class="max2"></span>
-            </div>
-          </div>
-          <div id="thirdDay" class="small-4 columns">
-            <h3></h3>
-            <div class="icon"></div>
-            <div class="weatherDisplay"></div>
-            <div class="tempDisplay2">Min temp.:
-              <br><span class="min3"></span>
-            </div>
-            <div class="tempDisplay2">Max temp.:
-              <br><span class="max3"></span>
-            </div>
-          </div>
-        </div>
-      </div>
+<body ng-app='weatherApp'>
+  <div class='row' ng-controller='weatherAppCtrl' id='wrapper'>
+    <div id='about' class='small-7 columns'>
 
+      <h3 id='time'></h3>
+      <h4 id='date'></h4>
+      <h1>{{userLocation.city}}</h1>
+    </div>
+
+    <div id='current' class='small-5 columns'>
+      <img ng-src='http://openweathermap.org/img/w/{{currentWeather.icon}}.png' alt='Weather icon' />
+      <br>
+      <h3>{{currentWeather.weather}}</h3>
+      <h4 class='tempDisplay'>Current:</h4>
+      <h4 class='tempDisplay'>Max:</h4>
+      <h2 class='tempDisplay'>{{currentWeather.currentTemp}}&#176C</h2>
+      <h2 class='tempDisplay'>{{currentWeather.maxTemp}}&#176C</h2>
 
     </div>
+
+    <ul id='forecast'>
+      <li ng-repeat="i in allForecast track by $index" class='small-4 columns'>
+        <img ng-src='http://openweathermap.org/img/w/{{i.icon}}.png' alt='Weather icon' />
+        <br>
+        <h5>{{i.weather}}</h5>
+        <h5>Min.temp:<br>{{i.minTemp}}&#176C</h5>
+        <h5>Max.temp:<br> {{i.maxTemp}}&#176C</h5>
+        <br>
+      </li>
+    </ul>
+
+
   </div>
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
   <script src="js/weatherApp.js"></script>
