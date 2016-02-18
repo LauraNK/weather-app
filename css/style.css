@@ -41,3 +41,23 @@
 .tempDisplay {
   display: inline;
   margin: .7em; }
+
+/*Media Queries
+==========================*/
+@media screen and (max-width: 670px) {
+  #wrapper {
+    width: 26em; }
+  #about h1 {
+    font-size: 2em; }
+  .tempDisplay {
+    margin: .3em; }
+  #current h3, h4 {
+    font-size: 1.1em; } }
+
+@media screen and (max-width: 435px) {
+  #wrapper {
+    width: 20em; }
+  #current h3, h4 {
+    font-size: .9em; }
+  .tempDisplay {
+    margin: .1em; } }
