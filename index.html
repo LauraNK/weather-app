@@ -33,6 +33,7 @@
       <li ng-repeat="i in allForecast track by $index" class='small-4 columns'>
         <img ng-src='http://openweathermap.org/img/w/{{i.icon}}.png' alt='Weather icon' />
         <br>
+				<h4>{{i.forecastDay}}</h4>
         <h5>{{i.weather}}</h5>
         <h5>Min.temp:<br>{{i.minTemp}}&#176C</h5>
         <h5>Max.temp:<br> {{i.maxTemp}}&#176C</h5>

@@ -19,7 +19,7 @@ app.controller('weatherAppCtrl', function($scope, $http) {
   };
 
   getWeather = function() {
-    var apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + $scope.userLocation.city + ',' + $scope.userLocation.countryCode + '&APPID=a5bb3d3396a371e54916503720fca1a3';
+    var apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + $scope.userLocation.city + ',' + $scope.userLocation.countryCode + '&APPID=20f9b2682f475a47b0f68910cdc909e2';
     console.log(apiUrl);
 
     // Get current weather
@@ -32,20 +32,42 @@ app.controller('weatherAppCtrl', function($scope, $http) {
     });
     getForecast();
   };
+	
+	
+	// Wrap forecast days
+	function wrapForecastDays(thisDay) {
+		switch (thisDay) {
+			case 7:
+				return 0;
+				break;
+			case 8:
+				return 1;
+				break;
+			case 9: 
+				return 2;
+				break;
+			default:
+				return thisDay;
+		}
+	}
 
   getForecast = function() {
-    var forecastUrl = 'http://api.openweathermap.org/data/2.5/forecast?q=' + $scope.userLocation.city + ',' + $scope.userLocation.countryCode + '&APPID=a5bb3d3396a371e54916503720fca1a3';
+    var forecastUrl = 'http://api.openweathermap.org/data/2.5/forecast?q=' + $scope.userLocation.city + ',' + $scope.userLocation.countryCode + '&APPID=20f9b2682f475a47b0f68910cdc909e2';
     console.log(forecastUrl);
 
     // Get three day forecast
     $.get(forecastUrl, function(data) {
 
-      for (var i = 0; i < 3; i++) {
+      for (var i = 1; i < 4; i++) {
         
         // Temporary object
         var temp = {};
-
+				var newDate = new Date();
+				var day = newDate.getDay();
+				var thisDay = wrapForecastDays(day + i);
         var num = i * 8;
+				
+				temp.forecastDay = dayNames[thisDay];
         temp.minTemp = toCel(data.list[num].main.temp_min);
         temp.maxTemp = toCel(data.list[num].main.temp_max);
         temp.weather = data.list[num].weather[0].main;
@@ -88,6 +110,8 @@ app.controller('weatherAppCtrl', function($scope, $http) {
       var date = newDate.getDate();
       $("#date").html(dayNames[day] + " " + monthNames[month] + " " + date);
     };
+	
+	
 
   getLocation();
   getDate();
